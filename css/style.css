@@ -92,8 +92,8 @@ h2.center { text-align: center; }
   font-family: var(--font-display);
   font-size: 1.4rem;
 }
-.brand-logo { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; }
-.brand-word { letter-spacing: 0.06em; }
+.brand-logo { width: 36px; height: 36px; min-width: 36px; border-radius: 50%; flex-shrink: 0; object-fit: cover; }
+.brand-word { letter-spacing: 0.06em; white-space: nowrap; }
 
 .nav {
   display: flex;
@@ -311,6 +311,30 @@ h2.center { text-align: center; }
 .content-cta a { color: var(--accent); font-weight: 600; }
 .content-cta a:hover { text-decoration: underline; }
 
+/* Blogs */
+.blogs { padding: 100px 0; }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.blog-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.blog-card h3 {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.blog-card p { color: var(--text-dim); font-size: 0.92rem; }
+
 /* Follow */
 .follow { padding: 100px 0 120px; }
 .follow-grid {
@@ -359,6 +383,7 @@ h2.center { text-align: center; }
 @media (max-width: 860px) {
   .about-inner { grid-template-columns: 1fr; gap: 40px; }
   .content-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px) {
